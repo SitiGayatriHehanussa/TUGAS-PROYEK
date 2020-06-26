@@ -8,6 +8,24 @@
  *
  * @author HP
  */
-public class NewClass3 {
+public class NewClass2 {
     
 }
+public class koneksiDB {
+    private Connection mysqlconfig;
+    public  Connection konekDB()throws SQLException{
+        try {
+            String url="jdbc:mysql://localhost:3306/Data_Pegawai"; //url database
+            String user="root"; //user database
+            String pass=""; //password database
+           DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            mysqlconfig=DriverManager.getConnection(url, user, pass);            
+        } catch (SQLException e) {
+            System.err.println("koneksi gagal "+e.getMessage()); //perintah menampilkan error pada koneksi
+        }
+        return mysqlconfig;
+    }  
+}
+}
+
+  
